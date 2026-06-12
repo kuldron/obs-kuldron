@@ -15,14 +15,9 @@ Start Streaming upgrades the stream to multitrack automatically. Otherwise
 enable **Multistream** in the Kuldron dock (View → Docks → Kuldron), or use
 its Go Live button.
 
-Streamer guide: [docs/streamer-setup.md](docs/streamer-setup.md)
-
-## Building
-
-Based on the [OBS plugin template](https://github.com/obsproject/obs-plugintemplate);
-the standard template build applies (`cmake --preset macos|windows-x64|ubuntu-x86_64`).
-CI builds all three platforms; pushing a semver tag publishes a GitHub
-release with installers.
+- Streamer guide: [docs/streamer-setup.md](docs/streamer-setup.md)
+- Installation: [docs/installation.md](docs/installation.md)
+- Development: [docs/development.md](docs/development.md)
 
 ## License
 
