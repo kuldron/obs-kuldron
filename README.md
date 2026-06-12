@@ -15,7 +15,7 @@ Start Streaming upgrades the stream to multitrack automatically. Otherwise
 enable **Multistream** in the Kuldron dock (View → Docks → Kuldron), or use
 its Go Live button.
 
-- Streamer guide: [docs/streamer-setup.md](docs/streamer-setup.md)
+- Getting started: [docs/getting-started.md](docs/getting-started.md)
 - Installation: [docs/installation.md](docs/installation.md)
 - Development: [docs/development.md](docs/development.md)
 
