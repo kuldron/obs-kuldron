@@ -66,9 +66,10 @@ Three ways, depending on your setup:
   lights up Kuldron over its own connection (reusing OBS's running video
   encoder, so it adds no encoding load), and stopping streaming stops it too.
 
-The status line tells you what happened — e.g. **"Live to Kuldron — OBS's
-stream upgraded to 3 audio tracks."** If something fails, the message says why
-(bad key, GOP/codec rejected, connection failed); the OBS log has detail.
+The status line tells you what happened — when it works, it says **"Live to
+Kuldron"** along with how many audio tracks went out. If something fails, the
+message says why (bad key, GOP/codec rejected, connection failed); the OBS
+log has detail.
 
 ## 5. Verify
 
