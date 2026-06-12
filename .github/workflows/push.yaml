@@ -6,6 +6,9 @@ on:
       - master
       - main
       - 'release/**'
+    # Path filters never apply to tag pushes, so releases always build.
+    paths-ignore:
+      - '**.md'
     tags:
       - '*'
 permissions:
