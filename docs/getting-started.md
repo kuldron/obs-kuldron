@@ -1,4 +1,4 @@
-# Streaming multitrack audio to Kuldron with OBS
+# Getting started
 
 The Kuldron plugin lets your viewers control each of your audio sources
 independently — turn the game down, the music off, keep your mic up. This guide
@@ -6,11 +6,8 @@ gets you from a normal OBS setup to a live multitrack broadcast.
 
 ## 1. Install the plugin
 
-1. Download the installer for your OS from the releases page
-   (`obs-kuldron-<version>-macos.pkg` or `obs-kuldron-<version>-windows-x64.zip`).
-2. Run the installer (macOS) or extract into your OBS plugins folder (Windows),
-   then restart OBS.
-3. In OBS, open **View → Docks → Kuldron**. Dock it wherever you like.
+Follow the [installation guide](installation.md), then in OBS open
+**View → Docks → Kuldron** and dock it wherever you like.
 
 ## 2. Put each sound on its own OBS track
 
@@ -28,10 +25,13 @@ Assign sources to tracks in OBS → **Edit → Advanced Audio Properties**: tick
 Track 1/2/3 boxes per source. (Optionally name the tracks in **Settings → Output
 → Audio** — the Kuldron dock shows those names next to each checkbox.)
 
-> Keep your **mic on its own track** and don't also mix it into the game track,
-> or viewers can't fully separate them.
+![OBS Advanced Audio Properties with the mic, game, and music sources each
+assigned to their own track](images/obs-advanced-audio-properties.png)
 
 ## 3. Configure the dock
+
+![The Kuldron dock with server, stream key, audio tracks, and multistream
+settings](images/kuldron-dock.png)
 
 In the **Kuldron** dock:
 
@@ -62,7 +62,7 @@ Three ways, depending on your setup:
 - **Manual** — click **Go Live to Kuldron** in the dock. Use this when OBS
   itself isn't streaming, or you want Kuldron independent of OBS's stream.
 - **Multistream** — tick **Multistream → Enabled** in the dock. Use this when
-  OBS streams *elsewhere* (Twitch/YouTube): your normal Start Streaming also
+  OBS streams *elsewhere*: your normal Start Streaming also
   lights up Kuldron over its own connection (reusing OBS's running video
   encoder, so it adds no encoding load), and stopping streaming stops it too.
 
