@@ -7,8 +7,9 @@ you can confirm it's there via View → Docks → Kuldron.
 
 ## Windows
 
-Run the `windows-x64` `.exe` installer. (A `.zip` is also published if you
-prefer to copy the files into your OBS install directory yourself.)
+Extract the `windows-x64` `.zip` into `%ProgramData%\obs-studio\plugins`
+(create the folder if it doesn't exist). You should end up with
+`%ProgramData%\obs-studio\plugins\obs-kuldron\bin\64bit\obs-kuldron.dll`.
 
 ## macOS
 
@@ -31,11 +32,8 @@ the `.pkg` in Finder and choose **Open**.
 
 ## Linux
 
-On Ubuntu 24.04 (and compatible), install the `.deb`:
+The `.deb` is built on Ubuntu 24.04; on it (and compatible distributions):
 
 ```sh
-sudo apt install ./obs-kuldron-*-ubuntu-24.04-x86_64.deb
+sudo apt install ./obs-kuldron-*-x86_64-linux-gnu.deb
 ```
-
-For other distributions, extract the `ubuntu-24.04-x86_64.tar.xz` and copy
-its contents into your OBS plugin directory.
