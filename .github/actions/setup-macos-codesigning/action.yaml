@@ -49,15 +49,15 @@ outputs:
 runs:
   using: composite
   steps:
-    - name: Check Runner Operating System 🏃‍♂️
+    - name: Check Runner Operating System
       if: runner.os != 'macOS'
       shell: bash
       run: |
-        : Check Runner Operating System 🏃‍♂️
+        : Check Runner Operating System
         echo "setup-macos-codesigning action requires a macOS-based runner."
         exit 2
 
-    - name: macOS Codesigning ✍️
+    - name: macOS Codesigning
       shell: zsh --no-rcs --errexit --pipefail {0}
       id: codesign
       env:
@@ -67,7 +67,7 @@ runs:
         MACOS_SIGNING_CERT_PASSWORD: ${{ inputs.certificatePassword }}
         MACOS_KEYCHAIN_PASSWORD: ${{ inputs.keychainPassword }}
       run: |
-        : macOS Code Signing ✍️
+        : macOS Code Signing
         if (( ${+RUNNER_DEBUG} )) setopt XTRACE
 
         if [[ ${MACOS_SIGNING_IDENTITY} && ${MACOS_SIGNING_IDENTITY_INSTALLER} && ${MACOS_SIGNING_CERT} ]] {
@@ -107,14 +107,14 @@ runs:
           print 'haveNotarizationUser=false' >> $GITHUB_OUTPUT
         }
 
-    - name: Provisioning Profile 👤
+    - name: Provisioning Profile
       shell: zsh --no-rcs --errexit --pipefail {0}
       id: provisioning
       if: ${{ fromJSON(steps.codesign.outputs.haveCodesignIdent) }}
       env:
           MACOS_SIGNING_PROVISIONING_PROFILE: ${{ inputs.provisioningProfile }}
       run: |
-        : Provisioning Profile 👤
+        : Provisioning Profile
         if (( ${+RUNNER_DEBUG} )) setopt XTRACE
 
         if [[ "${MACOS_SIGNING_PROVISIONING_PROFILE}" ]] {
@@ -141,7 +141,7 @@ runs:
           print 'haveProvisioningProfile=false' >> $GITHUB_OUTPUT
         }
 
-    - name: Notarization 🧑‍💼
+    - name: Notarization
       id: notarization
       if: fromJSON(steps.codesign.outputs.haveCodesignIdent)
       shell: zsh --no-rcs --errexit --pipefail {0}
@@ -149,7 +149,7 @@ runs:
           MACOS_NOTARIZATION_USERNAME: ${{ inputs.notarizationUser }}
           MACOS_NOTARIZATION_PASSWORD: ${{ inputs.notarizationPassword }}
       run: |
-        : Notarization 🧑‍💼
+        : Notarization
         if (( ${+RUNNER_DEBUG} )) setopt XTRACE
 
         if [[ ${MACOS_NOTARIZATION_USERNAME} && ${MACOS_NOTARIZATION_PASSWORD} ]] {
