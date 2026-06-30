@@ -114,7 +114,7 @@ jobs:
           print "pluginName=${product_name}" >> $GITHUB_OUTPUT
           print "pluginVersion=${product_version}" >> $GITHUB_OUTPUT
 
-      - uses: actions/cache/restore@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+      - uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         id: ccache-cache
         with:
           path: ${{ github.workspace }}/.ccache
@@ -124,7 +124,7 @@ jobs:
 
       # Cache the downloaded + built OBS/Qt/obs-deps tree (.deps), keyed on
       # buildspec.json so it only invalidates on a dependency version bump.
-      - uses: actions/cache/restore@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+      - uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         id: deps-cache
         with:
           path: ${{ github.workspace }}/.deps
@@ -219,7 +219,7 @@ jobs:
           echo "pluginName=${product_name}" >> $GITHUB_OUTPUT
           echo "pluginVersion=${product_version}" >> $GITHUB_OUTPUT
 
-      - uses: actions/cache/restore@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+      - uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         id: ccache-cache
         with:
           path: ${{ github.workspace }}/.ccache
@@ -295,7 +295,7 @@ jobs:
 
       # Cache the downloaded + built OBS/Qt/obs-deps tree (.deps), keyed on
       # buildspec.json so it only invalidates on a dependency version bump.
-      - uses: actions/cache/restore@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+      - uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         id: deps-cache
         with:
           path: ${{ github.workspace }}/.deps
