@@ -33,8 +33,8 @@ with this program. If not, see <https://www.gnu.org/licenses/>
 // STREAMING_STARTING synchronously, and only then calls obs_output_start().
 // In that window the output is fully built but inactive, so we may attach our
 // per-track audio encoders before liftoff — flv-mux emits enhanced-RTMP
-// multitrack whenever >=2 audio encoders are attached.
-// Video (encoder, GOP) is left exactly as the streamer configured it.
+// multitrack whenever >=2 audio encoders are attached. Video (encoder, GOP) is
+// left exactly as the streamer configured it.
 //
 // inject() must therefore be called synchronously from the STREAMING_STARTING
 // frontend callback; once the output is active it declines (the stream then

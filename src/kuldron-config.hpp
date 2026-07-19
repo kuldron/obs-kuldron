@@ -39,9 +39,9 @@ struct KuldronConfig {
 
 	// Which OBS audio tracks to send, as a bitmask over mixer indices 0..5
 	// (bit i == "Track i+1"). Each enabled track becomes its own enhanced-RTMP
-	// audio track, which the server turns into an audio_N HLS rendition
-	// and the player gives an independent fader. Routing sources to tracks and
-	// naming them stays in OBS (Advanced Audio Properties / Output > Audio).
+	// audio track, delivered as a separate audio rendition the player gives an
+	// independent fader. Routing sources to tracks and naming them stays in OBS
+	// (Advanced Audio Properties / Output > Audio).
 	uint32_t enabledTracks = 0b000111; // Tracks 1, 2, 3 by default
 
 	static KuldronConfig defaults();

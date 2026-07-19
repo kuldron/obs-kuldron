@@ -16,7 +16,7 @@ add_library(${CMAKE_PROJECT_NAME} MODULE)
 find_package(libobs REQUIRED)
 target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE OBS::libobs)
 
-# libcurl for the fire-and-forget track-names POST (KUL). Provided by
+# libcurl for the fire-and-forget track-names POST. Provided by
 # obs-deps on macOS/Windows CI and the system on Linux.
 find_package(CURL REQUIRED)
 target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE CURL::libcurl)

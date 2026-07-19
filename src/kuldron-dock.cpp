@@ -255,7 +255,7 @@ void KuldronDock::autoFillKeyFromObs()
 // --- start / stop ---------------------------------------------------------
 
 // Send the enabled tracks' OBS names (wire order) to the API so viewer
-// faders show real labels (KUL). Unnamed tracks send "" and keep the
+// faders show real labels. Unnamed tracks send "" and keep the
 // backend's per-slot "Audio N" fallback. Fire-and-forget.
 void KuldronDock::sendTrackNames(const std::string &server, const std::string &key)
 {
