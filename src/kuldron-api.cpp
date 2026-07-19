@@ -27,8 +27,8 @@ with this program. If not, see <https://www.gnu.org/licenses/>
 namespace {
 
 // rtmp://ingest.kuldron.com:1935/live -> "https://api.kuldron.com", or ""
-// when the host doesn't follow the ingest.<domain> convention (raw IPs,
-// test boxes) — in which case there is no API to talk to and we skip.
+// when the host isn't an "ingest.<domain>" name (e.g. a raw IP) — in which
+// case there is no matching API host to talk to and we skip.
 std::string apiBaseFromRtmpServer(const std::string &server)
 {
 	const std::string scheme = "rtmp://";
@@ -78,8 +78,8 @@ void postBlocking(const std::string &url, const std::string &body)
 	}
 	curl_slist *headers = curl_slist_append(nullptr, "Content-Type: application/json");
 	curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
-	// The API's WAF rejects requests without a User-Agent (HTTP 403) —
-	// libcurl sends none by default. Found live on the first 1.0.0 run.
+	// Set an explicit User-Agent; libcurl sends none by default and some
+	// endpoints reject requests that don't have one.
 	std::string ua = std::string("obs-kuldron/") + PLUGIN_VERSION;
 	curl_easy_setopt(curl, CURLOPT_USERAGENT, ua.c_str());
 	curl_easy_setopt(curl, CURLOPT_POSTFIELDS, body.c_str());

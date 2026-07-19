@@ -28,11 +28,10 @@ with this program. If not, see <https://www.gnu.org/licenses/>
 #include <vector>
 
 // Owns one rtmp_output plus its video encoder and N per-stem audio encoders,
-// driving libobs directly so the multitrack-audio output is emitted regardless
-// of OBS frontend gating (every native custom-server path is Twitch-gated; see
-// KUL-196). Each stem is an audio encoder bound to a distinct mixer index and
-// attached at output track 0..N-1 — the on-wire trackId the ingest fan-out
-// splits into audio_0/audio_1/... HLS renditions.
+// driving libobs directly to emit a multitrack-audio RTMP output. Each stem is
+// an audio encoder bound to a distinct mixer index and attached at output track
+// 0..N-1 (the on-wire trackId), which the server delivers as separate audio
+// renditions.
 class KuldronOutput {
 public:
 	KuldronOutput() = default;

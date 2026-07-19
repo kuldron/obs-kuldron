@@ -21,13 +21,13 @@ with this program. If not, see <https://www.gnu.org/licenses/>
 #include <string>
 #include <vector>
 
-// Fire-and-forget POST of the streamer's track names to the Kuldron API
-// (KUL-206). Enhanced-RTMP multitrack carries no per-track name, so this
-// side-channel is how viewers' faders get real labels instead of "Audio N".
+// Fire-and-forget POST of the streamer's track names to the Kuldron API.
+// Enhanced-RTMP multitrack carries no per-track name, so this is how viewers'
+// faders get real labels instead of "Audio N".
 //
 // `names[i]` labels wire track i (the audio_i rendition); empty entries mean
 // "no name" and the backend falls back per slot. The API base is derived
 // from the RTMP server host (rtmp://ingest.X -> https://api.X); hosts that
-// don't match (IPs, test boxes) skip silently. Runs on a detached thread
-// with a short timeout — never blocks or fails a stream.
+// don't match skip silently. Runs on a detached thread with a short timeout —
+// never blocks or fails a stream.
 void postTrackNames(const std::string &rtmpServer, const std::string &streamKey, const std::vector<std::string> &names);
